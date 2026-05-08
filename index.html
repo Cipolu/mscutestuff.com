@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ms. Cute Stuff – Luxury Personalized Gifts & Party Keepsakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --gold-dark: #8B6914;
+      --black: #0E0E0E;
+      --dark: #1A1A1A;
+      --charcoal: #2C2C2C;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+      --gray: #6B6B6B;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 60px;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(14,14,14,0.97);
+      padding: 14px 60px;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--white); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      transition: opacity 0.3s, color 0.3s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 10px 24px;
+      font-weight: 700 !important;
+      opacity: 1 !important;
+      transition: background 0.3s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+      transform: scale(1.05);
+      animation: zoomBg 12s ease-in-out infinite alternate;
+    }
+    @keyframes zoomBg {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 24px;
+      animation: fadeUp 1.2s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 44px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      padding: 16px 40px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.6);
+      color: var(--white);
+      padding: 16px 40px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      z-index: 2;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(201,168,76,0.8), transparent);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 100px 60px; }
+    .section-label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .section-title em { font-style: italic; color: var(--gold-dark); }
+    .section-sub {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 24px 0;
+    }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--dark);
+      padding: 70px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .about-strip-text { flex: 1; min-width: 280px; }
+    .about-strip-text .section-label { color: var(--gold-light); }
+    .about-strip-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .about-strip-text h2 em { font-style: italic; color: var(--gold); }
+    .about-strip-stats {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--cream); }
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: var(--white);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.14);
+    }
+    .product-card:hover .product-img img { transform: scale(1.08); }
+    .product-img {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+    .product-body { padding: 24px; }
+    .product-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .product-body p {
+      color: var(--gray);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .product-footer {
+      padding: 0 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-price {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-dark);
+      font-size: 1rem;
+    }
+    .product-btn {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.3s;
+    }
+    .product-btn:hover { color: var(--gold); }
+
+    /* ── FEATURED BANNER ── */
+    .featured-banner {
+      background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+      padding: 100px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .featured-banner-img {
+      position: relative;
+      height: 480px;
+    }
+    .featured-banner-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured-banner-img::before {
+      content: '';
+      position: absolute;
+      top: -16px; left: -16px;
+      right: 16px; bottom: 16px;
+      border: 1px solid var(--gold);
+      z-index: 0;
+    }
+    .featured-banner-img img { position: relative; z-index: 1; }
+    .featured-banner-text .section-label { color: var(--gold-light); }
+    .featured-banner-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .featured-banner-text h2 em { font-style: italic; color: var(--gold); }
+    .featured-banner-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.98rem;
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .feature-list { list-style: none; margin-bottom: 40px; }
+    .feature-list li {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .feature-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.7rem;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .process { background: var(--white); }
+    .process-header { text-align: center; margin-bottom: 70px; }
+    .process-header .section-sub { margin: 0 auto; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      position: relative;
+    }
+    .step {
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .step:hover { transform: translateY(-4px); }
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin: 0 auto 24px;
+    }
+    .step-icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .step p {
+      color: var(--gray);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    /* ── GALLERY ── */
+    .gallery { background: var(--cream); padding: 100px 60px; }
+    .gallery-header { text-align: center; margin-bottom: 60px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 12px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-overlay span {
+      color: var(--white);
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--dark);
+      padding: 100px 60px;
+      text-align: center;
+    }
+    .testimonials .section-label { color: var(--gold-light); }
+    .testimonials .section-title { color: var(--white); margin-bottom: 60px; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 40px 32px;
+      text-align: left;
+      transition: border-color 0.3s;
+    }
+    .testimonial:hover { border-color: var(--gold); }
+    .testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 20px; letter-spacing: 3px; }
+    .testimonial p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--black);
+      font-weight: 700;
+    }
+    .author-info strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.88rem;
+    }
+    .author-info span {
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+      padding: 100px 60px;
+      text-align: center;
+    }
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .cta p {
+      color: rgba(0,0,0,0.65);
+      font-size: 1rem;
+      margin-bottom: 44px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-form input {
+      padding: 16px 24px;
+      font-size: 0.9rem;
+      border: none;
+      outline: none;
+      width: 280px;
+      background: rgba(0,0,0,0.12);
+      color: var(--black);
+      font-family: 'Lato', sans-serif;
+    }
+    .cta-form input::placeholder { color: rgba(0,0,0,0.45); }
+    .btn-dark {
+      background: var(--black);
+      color: var(--gold);
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Lato', sans-serif;
+    }
+    .btn-dark:hover { background: var(--charcoal); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 70px 60px 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+    .footer-brand .nav-logo {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.88rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .footer-social { display: flex; gap: 14px; }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.3s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.8rem;
+    }
+    .footer-bottom a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 28px; }
+      nav.scrolled { padding: 12px 28px; }
+      .nav-links { display: none; }
+      section { padding: 70px 28px; }
+      .about-strip { padding: 60px 28px; }
+      .featured-banner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 70px 28px;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .gallery { padding: 70px 28px; }
+      .testimonials { padding: 70px 28px; }
+      .cta { padding: 70px 28px; }
+      footer { padding: 60px 28px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#">Ms. <span>Cute</span> Stuff</a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Luxury Personalized Gifts</span>
+      <h1>Make Every Celebration <em>Unforgettable</em></h1>
+      <p>Custom-crafted keepsakes and personalized gifts for weddings, birthdays, quinceañeras & all high-end celebrations. Each piece tells your unique story.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn-gold">Explore Collection</a>
+        <a href="#contact" class="btn-outline">Request Custom Order</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ── ABOUT STRIP ── -->
+  <div class="about-strip" id="about">
+    <div class="about-strip-text">
+      <span class="section-label">Who We Are</span>
+      <h2>Where <em>Elegance</em> Meets<br>Personal Touch</h2>
+    </div>
+    <div class="about-strip-stats">
+      <div class="stat">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Events Served</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Custom Made</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">48h</span>
+        <span class="stat-label">Turnaround</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PRODUCTS ── -->
+  <section class="products" id="products">
+    <div class="products-header reveal">
+      <div>
+        <span class="section-label">Our Collection</span>
+        <h2 class="section-title">Curated for <em>Special</em> Moments</h2>
+        <div class="divider"></div>
+      </div>
+      <p class="section-sub">Every item is handcrafted and personalized with names, dates, or custom messages that make your celebration one-of-a-kind.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1574271143515-5cddf8da19be?w=600&q=80&fit=crop" alt="Laser Engraved Flask" loading="lazy" />
+          <span class="product-tag">Best Seller</span>
+        </div>
+        <div class="product-body">
+          <h3>Laser-Engraved Hip Flasks</h3>
+          <p>Premium stainless steel flasks engraved with custom names, wedding dates, or monograms. A sophisticated keepsake for the wedding party.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $35</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80&fit=crop" alt="Custom Thermos" loading="lazy" />
+          <span class="product-tag">Popular</span>
+        </div>
+        <div class="product-body">
+          <h3>Personalized Tumblers & Thermos</h3>
+          <p>Insulated tumblers engraved or printed with names, logos, or wedding art. Keep drinks cold or hot all celebration long.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $28</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80&fit=crop" alt="Comfort Sandals" loading="lazy" />
+          <span class="product-tag">Fan Favorite</span>
+        </div>
+        <div class="product-body">
+          <h3>Bridal Comfort Sandals</h3>
+          <p>Because every dancing queen deserves a break. Elegant and comfortable flat sandals personalized for each guest — a practical & charming favor.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $18</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80&fit=crop" alt="Custom Wine Glasses" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <h3>Engraved Wine & Crystal Glasses</h3>
+          <p>Hand-engraved crystal stemware featuring the couple's name, date, or a heartfelt message. Stunning centerpieces and keepsakes in one.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $22</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?w=600&q=80&fit=crop" alt="Custom Robe" loading="lazy" />
+          <span class="product-tag">New</span>
+        </div>
+        <div class="product-body">
+          <h3>Personalized Silk Robes</h3>
+          <p>Plush satin robes embroidered with each bridesmaid's name or title. Perfect for getting-ready photos and a gift they'll actually use.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $55</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80&fit=crop" alt="Custom Candles" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <h3>Luxury Scented Candles</h3>
+          <p>Soy wax candles with custom labels, wedding colors, and personalized fragrances. Elegant table décor that guests take home as a memory.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $20</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1626784215021-2e39ccf971cd?w=600&q=80&fit=crop" alt="Jewelry Box" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <h3>Custom Jewelry & Keepsake Boxes</h3>
+          <p>Engraved wooden jewelry boxes to hold rings, bracelets, and sentimental trinkets. A timeless gift for bridesmaids and the bride herself.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $40</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80&fit=crop" alt="Tote Bag" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <h3>Monogrammed Tote Bags</h3>
+          <p>Canvas totes printed or embroidered with names, wedding art, or logos. Ideal as welcome bags or bridesmaid gifts — stylish and functional.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-price">From $24</span>
+          <a href="#contact" class="product-btn">Customize →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FEATURED BANNER ── -->
+  <div class="featured-banner">
+    <div class="featured-banner-img reveal">
+      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&q=80&fit=crop" alt="Wedding celebration details" loading="lazy" />
+    </div>
+    <div class="featured-banner-text reveal">
+      <span class="section-label">Why Choose Us</span>
+      <h2>Every Detail <em>Thoughtfully</em> Crafted</h2>
+      <p>We specialize in luxury personalized products that go beyond ordinary. Our team works closely with you to create items that reflect your style, story, and celebration vision.</p>
+      <ul class="feature-list">
+        <li>Premium materials — stainless steel, crystal, satin & more</li>
+        <li>Laser engraving & high-definition custom printing</li>
+        <li>Bulk orders for large wedding parties</li>
+        <li>Rush orders available for last-minute needs</li>
+        <li>Elegant gift packaging included</li>
+        <li>Ships nationwide & international orders welcome</li>
+      </ul>
+      <a href="#contact" class="btn-gold">Start Your Custom Order</a>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="process" id="process">
+    <div class="process-header reveal">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">How It <em>Works</em></h2>
+      <div class="divider" style="margin: 20px auto;"></div>
+      <p class="section-sub">From idea to your hands in just a few simple steps. We make the ordering process as smooth as your big day.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">💬</div>
+        <h3>Tell Us Your Vision</h3>
+        <p>Reach out via our form, email, or DM. Share the details — names, dates, colors, theme, and quantity.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-icon">🎨</div>
+        <h3>We Design for You</h3>
+        <p>Our designers craft a custom mockup for your approval. We revise until you're 100% in love with it.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-icon">✨</div>
+        <h3>We Craft with Care</h3>
+        <p>Once approved, we produce your items with precision using premium materials and expert techniques.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-icon">📦</div>
+        <h3>Delivered to Your Door</h3>
+        <p>Your order arrives beautifully packaged, ready to wow your guests and create lasting memories.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-header reveal">
+      <span class="section-label">Inspiration Gallery</span>
+      <h2 class="section-title">Real Events, <em>Real Magic</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&fit=crop" alt="Elegant wedding table" loading="lazy" />
+        <div class="gallery-item-overlay"><span>Wedding Reception</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637?w=600&q=80&fit=crop" alt="Custom flasks" loading="lazy" />
+        <div class="gallery-item-overlay"><span>Engraved Flasks</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80&fit=crop" alt="Party favors" loading="lazy" />
+        <div class="gallery-item-overlay"><span>Party Favors</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80&fit=crop" alt="Bridal party" loading="lazy" />
+        <div class="gallery-item-overlay"><span>Bridal Party</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80&fit=crop" alt="Custom gifts" loading="lazy" />
+        <div class="gallery-item-overlay"><span>Personalized Gifts</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials">
+    <span class="section-label">Love Notes</span>
+    <h2 class="section-title">What Our <em>Clients</em> Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"The engraved flasks were absolutely stunning. Every single groomsman was obsessed with them. Ms. Cute Stuff made our wedding favors truly unforgettable!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <strong>Sofia & Miguel</strong>
+            <span>Wedding — Miami, FL</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"The sandals were the BEST idea. My girls were dancing all night and not one complaint. The personalized packaging was so cute — everyone kept asking where we got them."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">V</div>
+          <div class="author-info">
+            <strong>Valeria R.</strong>
+            <span>Quinceañera — Dallas, TX</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Ordered 80 custom tumblers for our corporate gala. The quality was incredible, delivery was on time, and the team was so easy to work with. Will 100% order again."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">L</div>
+          <div class="author-info">
+            <strong>Lorena M.</strong>
+            <span>Corporate Event — New York, NY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta" id="contact">
+    <h2>Ready to Make It <em>Yours?</em></h2>
+    <p>Tell us about your event and we'll get back to you within 24 hours with a free quote and design consultation.</p>
+    <form class="cta-form" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <button type="submit" class="btn-dark">Get Free Quote</button>
+    </form>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="#">Ms. <span>Cute</span> Stuff</a>
+        <p>Luxury personalized gifts and keepsakes for life's most beautiful celebrations. Every detail, crafted with love.</p>
+        <div class="footer-social">
+          <a class="social-link" href="#">ig</a>
+          <a class="social-link" href="#">fb</a>
+          <a class="social-link" href="#">tk</a>
+          <a class="social-link" href="#">pt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Engraved Flasks</a></li>
+          <li><a href="#">Custom Tumblers</a></li>
+          <li><a href="#">Comfort Sandals</a></li>
+          <li><a href="#">Silk Robes</a></li>
+          <li><a href="#">Luxury Candles</a></li>
+          <li><a href="#">Wine Glasses</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Occasions</h4>
+        <ul>
+          <li><a href="#">Weddings</a></li>
+          <li><a href="#">Quinceañeras</a></li>
+          <li><a href="#">Baby Showers</a></li>
+          <li><a href="#">Birthday Parties</a></li>
+          <li><a href="#">Corporate Events</a></li>
+          <li><a href="#">Bridal Showers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@mscutestuff.com">hello@mscutestuff.com</a></li>
+          <li><a href="#">Custom Orders</a></li>
+          <li><a href="#">Bulk Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ms. Cute Stuff · <a href="#">mscutestuff.com</a> · All rights reserved.</p>
+      <p>Made with ♥ for every celebration</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ We\'ll be in touch!';
+      btn.style.background = '#2C2C2C';
+      e.target.reset();
+      setTimeout(() => {
+        btn.textContent = 'Get Free Quote';
+        btn.style.background = '';
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
